@@ -1,6 +1,6 @@
 %define module   Pod-ToDemo
 %define version    1.01
-%define release    %mkrel 2
+%define release    %mkrel 3
 
 Name:       perl-%{module}
 Version:    %{version}
