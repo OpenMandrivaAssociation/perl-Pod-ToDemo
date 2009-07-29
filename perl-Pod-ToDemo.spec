@@ -1,21 +1,21 @@
-%define module   Pod-ToDemo
-%define version    1.01
-%define release    %mkrel 3
+%define upstream_name    Pod-ToDemo
+%define upstream_version 1.01
 
-Name:       perl-%{module}
-Version:    %{version}
-Release:    %{release}
-License:    GPL or Artistic
-Group:      Development/Perl
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
+
 Summary:    writes a demo program from a tutorial POD
-Source:     http://www.cpan.org/modules/by-module/Pod/%{module}-%{version}.tar.gz
-Url:        http://search.cpan.org/dist/%{module}
-BuildRequires: perl-devel
+License:    GPL+ or Artistic
+Group:      Development/Perl
+Url:        http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Pod/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires: perl(Test::Exception)
 BuildRequires: perl(Test::Simple)
 BuildRequires: perl(Module::Build::Compat)
 BuildArch: noarch
-BuildRoot:  %{_tmppath}/%{name}-%{version}
+BuildRoot:  %{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 Pod::ToDemo allows you to write POD-only modules that serve as tutorials which
@@ -29,7 +29,7 @@ and it will write a bare-bones demo program called sdl_demo.pl based on the
 tutorial.
 
 %prep
-%setup -q -n %{module}-%{version} 
+%setup -q -n %{upstream_name}-%{upstream_version}
 rm -f t/0-signature.t
 
 %build
@@ -51,4 +51,3 @@ rm -rf %{buildroot}
 %doc Changes README
 %{_mandir}/man3/*
 %{perl_vendorlib}/Pod
-
