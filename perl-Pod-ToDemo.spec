@@ -1,9 +1,9 @@
 %define upstream_name    Pod-ToDemo
-%define upstream_version 1.01
+%define upstream_version 1.20110613
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:    writes a demo program from a tutorial POD
 License:    GPL+ or Artistic
