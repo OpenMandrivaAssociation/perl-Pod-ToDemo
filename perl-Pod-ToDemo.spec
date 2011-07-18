@@ -1,5 +1,5 @@
 %define upstream_name    Pod-ToDemo
-%define upstream_version 1.20110614
+%define upstream_version 1.20110709
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
